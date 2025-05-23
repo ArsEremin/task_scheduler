@@ -15,7 +15,7 @@ class UserExistsException(BaseAuthException):
 
 
 class InvalidAuthDataException(BaseAuthException):
-    detail = "invalid email or password"
+    detail = "invalid login or password"
 
 
 class InvalidTokenException(BaseAuthException):
@@ -24,11 +24,3 @@ class InvalidTokenException(BaseAuthException):
 
 class TokenExpiredException(BaseAuthException):
     detail = "token expired"
-
-
-class BookingException(HTTPException):
-    status_code = status.HTTP_409_CONFLICT
-    detail = "no free rooms"
-
-    def __init__(self):
-        super().__init__(status_code=self.status_code, detail=self.detail)
