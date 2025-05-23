@@ -1,22 +1,10 @@
 from datetime import datetime, timezone
-from enum import StrEnum
 
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from src.database import Base
-
-
-class TaskStatus(StrEnum):
-    TODO = 'todo'
-    IN_PROGRESS = 'in_progress'
-    DONE = 'done'
-
-
-class TaskPriority(StrEnum):
-    LOW = 'low'
-    MEDIUM = 'medium'
-    HIGH = 'high'
+from src.tasks.enums import TaskStatus, TaskPriority
 
 
 class Task(Base):
