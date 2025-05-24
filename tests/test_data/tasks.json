@@ -1,0 +1,29 @@
+[
+    {
+        "title": "task1",
+        "description": "task for alex",
+        "created_by": 1,
+        "status": "todo",
+        "priority": "low",
+        "assignee_id": 1,
+        "due_date": "2025-05-31"
+    },
+    {
+        "title": "task2",
+        "description": "task for petr",
+        "created_by": 1,
+        "status": "in_progress",
+        "priority": "medium",
+        "assignee_id": 2,
+        "due_date": "2025-06-12"
+    },
+    {
+        "title": "task3",
+        "description": "task for ivan",
+        "created_by": 1,
+        "status": "done",
+        "priority": "high",
+        "assignee_id": 3,
+        "due_date": "2025-05-20"
+    }
+]
