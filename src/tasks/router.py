@@ -43,7 +43,10 @@ async def get_task(
     task_service: Annotated[TaskService, Depends(get_task_service)],
     task_id: int
 ) -> TaskSchema:
-    return await task_service.get_task_by_id(task_id)
+    task = await task_service.get_task_by_id(task_id)
+    if not task:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="task not found")
+    return task
 
 
 @router.patch("/{task_id}", status_code=status.HTTP_200_OK)
